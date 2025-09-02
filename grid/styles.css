@@ -1,0 +1,182 @@
+/* ESTILOS CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.contenedor { /* clase usada en casi todas las secciones como wrapper general */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Encabezado */
+header { /* etiqueta <header> del HTML */
+    background-color: #0039a6;
+    color: white;
+    padding: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-titulo { /* <div class="logo-titulo"> dentro de <header> */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.titulo { /* <h1 class="titulo"> dentro de .logo-titulo */
+    font-size: 28px;
+}
+
+/* Menú */
+.menu { /* <div class="menu"> que contiene el <nav> */
+    background-color: #7b2c59;
+    padding: 15px 0;
+}
+
+.menu nav ul { /* la lista <ul> dentro del <nav> en el menú */
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.menu nav a { /* los enlaces <a> dentro del menú */
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.menu nav a:hover { /* efecto hover de los <a> en el menú */
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Noticias */
+.noticias { /* <main class="noticias"> */
+    padding: 30px 0;
+}
+
+.noticias h2 { /* el <h2> "Últimas Noticias" */
+    color: #0039a6;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #d52b1e;
+}
+
+.grid-noticias { /* <div class="grid-noticias"> que contiene las noticias */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.noticia { /* cada <article class="noticia"> */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.noticia h3 { /* el título de cada noticia */
+    color: #0039a6;
+    margin-bottom: 10px;
+}
+
+.noticia p { /* el texto dentro de cada noticia */
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.fecha { /* <p class="fecha"> dentro de cada noticia */
+    color: #d52b1e !important;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Pie de página */
+footer { /* etiqueta <footer> */
+    background: linear-gradient(to right, #0039a6, #d52b1e);
+    color: white;
+    padding: 30px 0;
+    margin-top: auto;
+}
+
+.pie-contenido { /* <div class="pie-contenido"> dentro de footer */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.contacto h3, .redes h3 { /* los <h3> en las secciones contacto y redes */
+    margin-bottom: 15px;
+    color: #f4dc93;
+}
+
+.redes-sociales { /* <div class="redes-sociales"> dentro de footer */
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.redes-sociales a { /* enlaces dentro de redes-sociales */
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.redes-sociales a:hover { /* hover en los enlaces de redes */
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.derechos { /* <div class="derechos"> al final del footer */
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logo-titulo { /* en móviles, logo y título en columna */
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .menu nav ul { /* el menú pasa a vertical en móviles */
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .menu nav a { /* enlaces de menú ocupan 100% del ancho */
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .pie-contenido { /* footer en una sola columna */
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .redes-sociales { /* centrar íconos de redes */
+        justify-content: center;
+    }
+}
